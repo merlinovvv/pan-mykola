@@ -9,6 +9,7 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <title>Комплексний ремонт у місті Львів</title>
 </head>
 
@@ -16,6 +17,9 @@
     <section class="main">
         <section class="bgc">
             <div class="container">
+                <div class="sending">
+                    <h3>Заявка успішно відправлена!</h3>
+                </div>
                 <div class="navigation">
                     <a href="#"><img src="./img/logo-header.png" alt="Логотип"></a>
                     <nav>
@@ -41,9 +45,13 @@
                             <h1><b>КОМПЛЕКСНИЙ <span>РЕМОНТ</span></b> У МІСТІ <span>ЛЬВІВ</span></h1>
                         </div>
                         <div class="sidebar__form">
-                            <form action="" method="post">
-                                <input type="text" placeholder="Ім'я та прізвище">
-                                <input type="text" placeholder="Номер телефону">
+                            <form class="form__profile valid" action="" method="post">
+                                <label for="name">
+                                    <input data-validate-field="name" name="ІМ'Я" type="text" placeholder="Ім'я та прізвище">
+                                </label>
+                                <label for="tel">
+                                    <input data-validate-field="tel" name="ТЕЛЕФОН" type="tel" placeholder="Номер телефону">
+                                </label>
                                 <button type="submit" class="btn">Замовити консультацію</button>
                             </form>
                         </div>
@@ -263,25 +271,198 @@
             <h3 class="questions__title">
                 Дайте відповідь на запитання для приблизного прорахунку вартості ремонту
             </h3>
-            <form class="questions__form" action="" method="post">
-                <h4 class="form__title">РЕМОНТ ЯКОГО ПРИМІЩЕННЯ ВАС ЦІКАВИТЬ?</h4>
-                <div class="form__content">
-                    <div class="from__control-group">
-                        <label class="control control-radio">
-                            ЖИТЛОВИЙ
-                            <input type="radio" name="radio" checked="checked" />
-                            <div class="control_indicator"></div>
-                        </label>
-                        <label class="control control-radio">
-                            КОМЕРЦІЙНИЙ
-                            <input type="radio" name="radio" />
-                            <div class="control_indicator"></div>
-                        </label>
+            <form class="questions__form valid" action="" method="post">
+                <div class="form-group on">
+                    <h4 class="form__title">РЕМОНТ ЯКОГО ПРИМІЩЕННЯ ВАС ЦІКАВИТЬ?</h4>
+                    <div class="form__content">
+                        <div class="from__control-group">
+                            <label class="control control-radio">
+                                ЖИТЛОВИЙ
+                                <input value="Житловий" id="radio" type="radio" name="ПРИМІЩЕННЯ" checked>
+                                <div class="control_indicator"></div>
+                            </label>
+                            <label class="control control-radio">
+                                КОМЕРЦІЙНИЙ
+                                <input value="Комерційний" id="radio" type="radio" name="ПРИМІЩЕННЯ">
+                                <div class="control_indicator"></div>
+                            </label>
+                        </div>
+                        <div class="form__buttons">
+                            <button type="button" class="form__btn-back" onclick="back()">НАЗАД</button>
+                            <button type="button" class="form__btn" onclick="next()">ДАЛІ</button>
+                        </div>
+                        
                     </div>
-                    <button class="form__btn" onclick="">ДАЛІ</button>
                 </div>
-
-
+                <div class="form-group">
+                    <h4 class="form__title">ЯКИЙ РЕМОНТ ВАС ЦІКАВИТЬ?</h4>
+                    <div class="form__content">
+                        <div class="from__control-group">
+                            <label class="control control-radio">
+                                Ремонт окремого приміщення (кухня / ванна і т.д.)
+                                <input value="Ремонт окремого приміщення (кухня / ванна і т.д.)" id="radio" type="radio" name="РЕМОНТ" checked />
+                                <div class="control_indicator"></div>
+                            </label>
+                            <label class="control control-radio">
+                                Комплексний ремонт приміщення
+                                <input value="Комплексний ремонт приміщення" id="radio" type="radio" name="РЕМОНТ" />
+                                <div class="control_indicator"></div>
+                            </label>
+                        </div>
+                        <div class="form__buttons">
+                            <button type="button" class="form__btn-back" onclick="back()">НАЗАД</button>
+                            <button type="button" class="form__btn" onclick="next()">ДАЛІ</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h4 class="form__title">ЯКИЙ У ВАС ТИП ЖИТЛА?</h4>
+                    <div class="form__content">
+                        <div class="from__control-group">
+                            <label class="control control-radio">
+                                Вторинне приміщення
+                                <input value="Вторинне приміщення" id="radio" type="radio" name="ТИП ЖИТЛА" checked />
+                                <div class="control_indicator"></div>
+                            </label>
+                            <label class="control control-radio">
+                                Новобудова
+                                <input value="Новобудова" id="radio" type="radio" name="ТИП ЖИТЛА" />
+                                <div class="control_indicator"></div>
+                            </label>
+                        </div>
+                        <div class="form__buttons">
+                            <button type="button" class="form__btn-back" onclick="back()">НАЗАД</button>
+                            <button type="button" class="form__btn" onclick="next()">ДАЛІ</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h4 class="form__title">ЯКА ПЛОЩА ПРИМІЩЕННЯ, ДЕ ПЛАНУЄТЕ РОБИТИ РЕМОНТ?</h4>
+                    <div class="form__content">
+                        <div class="from__control-group">
+                            <input class="questions__input" id="area" type="text" name="ПЛОЩА" placeholder="Наприклад: 20">
+                            <label for="ПЛОЩА">м2</label>
+                        </div>
+                        <div class="form__buttons">
+                            <button type="button" class="form__btn-back" onclick="back()">НАЗАД</button>
+                            <button type="button" class="form__btn" onclick="next()">ДАЛІ</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h4 class="form__title">ЯК ПОВИННЕ ВИГЛЯДАТИ ВАШЕ ПРИМІЩЕННЯ?</h4>
+                    <div class="form__content">
+                        <div class="from__control-group">
+                            <label class="control control-radio">
+                                У мене є дизайн-проект
+                                <input value="У мене є дизайн-проект" id="radio" type="radio" name="ДИЗАЙН" checked />
+                                <div class="control_indicator"></div>
+                            </label>
+                            <label class="control control-radio">
+                                Мені потрібен дизайн-проект
+                                <input value="Мені потрібен дизайн-проект" id="radio" type="radio" name="ДИЗАЙН" />
+                                <div class="control_indicator"></div>
+                            </label>
+                        </div>
+                        <div class="form__buttons">
+                            <button type="button" class="form__btn-back" onclick="back()">НАЗАД</button>
+                            <button type="button" class="form__btn" onclick="next()">ДАЛІ</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h4 class="form__title">КОЛИ ПЛАНУЄТЕ РОБИТИ РЕМОНТ?</h4>
+                    <div class="form__content">
+                        <div class="from__control-group">
+                            <label class="control control-radio">
+                                ЦЬОГО МІСЯЦЯ
+                                <input value="Цього місяця" id="radio" type="radio" name="ЧАС" checked />
+                                <div class="control_indicator"></div>
+                            </label>
+                            <label class="control control-radio">
+                                ЧЕРЕЗ 2 МІСЯЦІ
+                                <input value="Через 2 місяці" id="radio" type="radio" name="ЧАС" />
+                                <div class="control_indicator"></div>
+                            </label>
+                            <label class="control control-radio">
+                                ЧЕРЕЗ ПІВ РОКУ
+                                <input value="Через пів року" id="radio" type="radio" name="ЧАС" />
+                                <div class="control_indicator"></div>
+                            </label>
+                            <label class="control control-radio">
+                                ЩЕ НЕ ЗНАЮ
+                                <input value="Ще не знаю" id="radio" type="radio" name="ЧАС" />
+                                <div class="control_indicator"></div>
+                            </label>
+                        </div>
+                        <div class="form__buttons">
+                            <button type="button" class="form__btn-back" onclick="back()">НАЗАД</button>
+                            <button type="button" class="form__btn" onclick="next()">ДАЛІ</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h4 class="form__title">НА ЯКИЙ БЮДЖЕТ РОЗРАХОВУЄТЕ?</h4>
+                    <div class="form__content">
+                        <div class="from__control-group">
+                            <label class="control control-radio">
+                                до 10 000$
+                                <input value="до 10 000$" id="radio" type="radio" name="БЮДЖЕТ" checked />
+                                <div class="control_indicator"></div>
+                            </label>
+                            <label class="control control-radio">
+                                до 20 000$
+                                <input value="до 20 000$" id="radio" type="radio" name="БЮДЖЕТ" />
+                                <div class="control_indicator"></div>
+                            </label>
+                            <label class="control control-radio">
+                                до 30 000$
+                                <input value="до 30 000$" id="radio" type="radio" name="БЮДЖЕТ" />
+                                <div class="control_indicator"></div>
+                            </label>
+                            <label class="control control-radio">
+                                до 50 000$
+                                <input value="до 50 000$" id="radio" type="radio" name="БЮДЖЕТ" />
+                                <div class="control_indicator"></div>
+                            </label>
+                        </div>
+                        <div class="form__buttons">
+                            <button type="button" class="form__btn-back" onclick="back()">НАЗАД</button>
+                            <button type="button" class="form__btn" onclick="next()">ДАЛІ</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h4 class="form__title"></h4>
+                    <div class="form__content">
+                        <div class="from__control-group">
+                            <label for="name">
+                                <input data-validate-field="name" class="questions__input" id="name" name="ІМ'Я" type="text" placeholder="Ім'я та прізвище">
+                            </label>
+                            <label for="tel">
+                                <input data-validate-field="tel" class="questions__input" id="tel" name="ТЕЛЕФОН" type="tel" placeholder="Номер телефону">
+                            </label>
+                        </div>
+                        <div class="form__buttons">
+                            <button type="button" class="form__btn-back" onclick="back()">НАЗАД</button>
+                            <button type="submit" class="form__btn btn-send">РОЗРАХУВАТИ</button>
+                        </div> 
+                    </div>
+                </div>
+                <div class="form-group">
+                    <h4 class="form__title">Дякуємо за довіру</h4>
+                    <div class="form__content">
+                        <div class="from__control-group">
+                            <p>З вами зв’яжиться менеджер</p>
+                        </div>                      
+                    </div>
+                </div>
             </form>
         </div>
     </div>
@@ -292,7 +473,7 @@
                     <img src="./img/logo-footer.png" alt="" class="box__logo">
                     <div class="box__menu">
                         <ul>
-                            
+
                             <li class="menu__links"><a href="">ГОЛОВНА</a></li>
                             <li class="menu__links"><a href="">ПОСЛУГИ</a></li>
                             <li class="menu__links"><a href="">ПОРТФОЛІО</a></li>
@@ -335,7 +516,10 @@
             </div>
         </div>
     </div>
+    <script src="./libs/inputmask.min.js"></script>
+    <script src="./libs/just-validate.min.js"></script>
     <script src="./js/script.js"></script>
+    
 </body>
 
 </html>
