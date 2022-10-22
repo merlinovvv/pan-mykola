@@ -32,16 +32,16 @@ try {
   $mail->SMTPAuth   = true;
 
   // Настройки вашей почты
-  $mail->Host       = 'mail.merlinov.pp.ua'; // SMTP сервера вашей почты
-  $mail->Username   = '_mainaccount@merlinov.pp.ua'; // Логин на почте
-  $mail->Password   = 'tylinova2003*'; // Пароль на почте
+  $mail->Host       = ''; // SMTP сервера вашей почты
+  $mail->Username   = ''; // Логин на почте
+  $mail->Password   = ''; // Пароль на почте
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
 
-  $mail->setFrom('merli751@merlinov.pp.ua', 'Заявка с вашего сайта'); // Адрес самой почты и имя отправителя
+  $mail->setFrom('', 'Заявка с вашего сайта'); // Адрес самой почты и имя отправителя
 
   // Получатель письма
-  $mail->addAddress('merlinovandrej@gmail.com');
+  $mail->addAddress('');
 
   // Отправка сообщения
   $mail->isHTML(true);
