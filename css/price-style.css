@@ -1,0 +1,129 @@
+.main {
+    background-image: url(../img/price-main.jpg);
+}
+
+.bgc {
+    background: rgba(0, 0, 0, 0.52);
+    backdrop-filter: blur(5px);
+}
+
+.content__sidebar {
+    max-width: 990px;
+    width: 100%;
+}
+
+.sidebar__title {
+    max-width: 990px;
+    width: 100%;
+}
+
+.price {
+    margin-top: 100px;
+}
+
+.price__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.list__block {
+    transform: translate(0%, 0px);
+    opacity: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 0;
+    width: 100%;
+    margin-bottom: 185px;
+}
+
+.block__title {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 35px;
+    line-height: 43px;
+    margin-bottom: 100px;
+}
+
+.block__info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 1140px;
+}
+
+.price .info__box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1140px;
+    margin-bottom: 76px;
+}
+.price .info__box:last-child{
+    margin-bottom: 0;
+}
+
+.price .box__text {
+    position: relative;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 30px;
+    line-height: 37px;
+    max-width: 370px;
+    text-align: start;
+}
+
+.text__title {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 25px;
+    line-height: 30px;
+    margin-bottom: 15px;
+}
+
+.text__sub-title {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 21px;
+}
+
+.box__image {
+    border-radius: 10px;
+}
+
+/* ANIMATION */
+
+.block__title{
+    transform: translate(-120%, 0px);
+	opacity: 0;
+	transition: all 0.8s ease 0s;
+}
+.block__title._active{
+    transform: translate(0, 0);
+    opacity: 1;
+}
+.info__box{
+    transform: translate(-120%, 0px);
+	opacity: 0;
+	transition: all 0.8s ease 0s;
+}
+.info__box._active:nth-child(1){
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: all 0.8s ease 0.1s;
+}
+.info__box._active:nth-child(2){
+    transform: translate(0, 0);
+    opacity: 1;
+    transition: all 0.8s ease 0.2s;
+}
+
+/* END-ANIMATION */
