@@ -1,14 +1,12 @@
 "use strict"
 var t;
 function up() {
+    if(window.outerWidth > 769)
     if ((window.innerHeight + window.pageYOffset) < document.documentElement.scrollHeight - 1) 
     { 
         window.scrollBy(0, 100); 
         t = setTimeout('up()', 20); 
     } else clearTimeout(t);
-    console.log(window.innerHeight); 
-    console.log(window.pageYOffset);
-    console.log(window.document.documentElement.scrollHeight); 
     return false;
 }
 
@@ -90,7 +88,7 @@ if (slideForm !== null) {
                     }
                 }
             }
-            xhr.open('POST', 'mail.php', true);
+            xhr.open('POST', '../mail.php', true);
             xhr.send(formData);
 
             thisForm = reset();
@@ -139,7 +137,7 @@ if (mainForm !== null) {
                     }
                 }
             }
-            xhr.open('POST', 'mail.php', true);
+            xhr.open('POST', '../mail.php', true);
             xhr.send(formData);
 
             thisForm = reset();

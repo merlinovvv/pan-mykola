@@ -4,12 +4,12 @@ require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
 require 'phpmailer/Exception.php';
 
-$title = "Тема письма";
+$title = "Нова заявка на вашому сайті!";
 $file = $_FILES['file'];
 
 $c = true;
 // Формирование самого письма
-$title = "Заголовок письма";
+$title = "Клієнт залишив заявку";
 foreach ( $_POST as $key => $value ) {
   if ( $value != "" && $key != "project_name" && $key != "admin_email" && $key != "form_subject" ) {
     $body .= "
@@ -38,7 +38,7 @@ try {
   $mail->SMTPSecure = 'ssl';
   $mail->Port       = 465;
 
-  $mail->setFrom('', 'Заявка с вашего сайта'); // Адрес самой почты и имя отправителя
+  $mail->setFrom('', 'Заявка з вашого сайту'); // Адрес самой почты и имя отправителя
 
   // Получатель письма
   $mail->addAddress('');
@@ -51,5 +51,5 @@ try {
   $mail->send();
 
 } catch (Exception $e) {
-  $status = "Сообщение не было отправлено. Причина ошибки: {$mail->ErrorInfo}";
+  $status = "Повідомлення не було відправлене. Причина помилки: {$mail->ErrorInfo}";
 }

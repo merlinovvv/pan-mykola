@@ -1,10 +1,18 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 .main {
     background-image: url(../img/about-main.jpg);
 }
 
 .bgc {
     background: rgba(0, 0, 0, 0.4);
-    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(5px);
 }
 
 .team__text {
@@ -13,12 +21,17 @@
 }
 
 .page__brigade {
+    display: -ms-grid;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(auto, 400px));
     grid-gap: 32px;
     grid-auto-flow: dense;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     text-align: center;
 }
 
@@ -62,57 +75,234 @@
 /* ANIMATION */
 
 .page__text{
-    transform: translate(0, -20%);
+    -webkit-transform: translate(0, -20%);
+        -ms-transform: translate(0, -20%);
+            transform: translate(0, -20%);
 	opacity: 0;
+	-webkit-transition: all 0.8s ease 0s;
+	-o-transition: all 0.8s ease 0s;
 	transition: all 0.8s ease 0s;
 }
 .page__text._active{
-    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
     opacity: 1;
 }
 
 .page__title{
-    transform: translate(0, -100%);
+    -webkit-transform: translate(0, -100%);
+        -ms-transform: translate(0, -100%);
+            transform: translate(0, -100%);
 	opacity: 0;
+	-webkit-transition: all 0.8s ease 0s;
+	-o-transition: all 0.8s ease 0s;
 	transition: all 0.8s ease 0s;
 }
 .page__title._active{
-    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
     opacity: 1;
 }
 .brigade__block{
-    transform: translate(0, -20%);
+    -webkit-transform: translate(0, -20%);
+        -ms-transform: translate(0, -20%);
+            transform: translate(0, -20%);
 	opacity: 0;
+	-webkit-transition: all 0.8s ease 0s;
+	-o-transition: all 0.8s ease 0s;
 	transition: all 0.8s ease 0s;
 }
 .brigade__block._active:nth-child(1){
-    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
     opacity: 1;
+    -webkit-transition: all 0.8s ease 0.1s;
+    -o-transition: all 0.8s ease 0.1s;
     transition: all 0.8s ease 0.1s;
 }
 .brigade__block._active:nth-child(2){
-    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
     opacity: 1;
+    -webkit-transition: all 0.8s ease 0.2s;
+    -o-transition: all 0.8s ease 0.2s;
     transition: all 0.8s ease 0.2s;
 }
 .brigade__block._active:nth-child(3){
-    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
     opacity: 1;
+    -webkit-transition: all 0.8s ease 0.3s;
+    -o-transition: all 0.8s ease 0.3s;
     transition: all 0.8s ease 0.3s;
 }
 .brigade__block._active:nth-child(4){
-    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
     opacity: 1;
+    -webkit-transition: all 0.8s ease 0.4s;
+    -o-transition: all 0.8s ease 0.4s;
     transition: all 0.8s ease 0.4s;
 }
 .brigade__block._active:nth-child(5){
-    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
     opacity: 1;
+    -webkit-transition: all 0.8s ease 0.5s;
+    -o-transition: all 0.8s ease 0.5s;
     transition: all 0.8s ease 0.5s;
 }
 .brigade__block._active:nth-child(6){
-    transform: translate(0, 0);
+    -webkit-transform: translate(0, 0);
+        -ms-transform: translate(0, 0);
+            transform: translate(0, 0);
     opacity: 1;
+    -webkit-transition: all 0.8s ease 0.6s;
+    -o-transition: all 0.8s ease 0.6s;
     transition: all 0.8s ease 0.6s;
 }
 /* END-ANIMATION */
+
+@media(max-width: 1480px){
+    .page__text p {
+        font-size: 27px;
+        line-height: 34px;
+    }
+    .page__title h3 {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .page__brigade img{
+        max-width: 100%;
+    }
+    .brigade__block p:last-child {
+        margin-bottom: 10px;
+    }
+    .page__brigade {
+        grid-template-columns: repeat(auto-fit, minmax(340px, 340px));
+    }
+}
+
+@media(max-width: 1280px){
+    .page__text {
+        margin-top: 90px;
+        margin-bottom: 70px;
+    }
+    .page__title {
+        margin-bottom: 60px;
+    }
+    .page__brigade {
+        grid-template-columns: repeat(auto-fit, minmax(285px, 285px));
+        grid-gap: 20px;
+    }
+    
+}
+
+@media(max-width: 1024px){
+    .page__text p {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .page__title h3 {
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .page__title {
+        margin-bottom: 40px;
+    }
+    .page__text {
+        margin-top: 70px;
+        margin-bottom: 40px;
+    }
+    .page__brigade {
+        grid-template-columns: repeat(auto-fit, minmax(230px, 230px));
+        grid-gap: 20px;
+    }
+    .brigade__block p {
+        font-size: 15px;
+        line-height: 20px;
+    }
+}
+
+@media(max-width: 880px){
+    .brigade__block p {
+        font-size: 13px;
+        line-height: 17px;
+    }
+    .page__brigade {
+        grid-template-columns: repeat(auto-fit, minmax(190px, 190px));
+        grid-gap: 15px;
+    }
+    .brigade__block img {
+        margin-bottom: 10px;
+    }
+    .page__title h3 {
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .page__title {
+        margin-bottom: 30px;
+    }
+    .page__text p {
+        font-size: 17px;
+        line-height: 24px;
+    }
+    .page__text {
+        margin-top: 45px;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 769px){
+    .page__brigade {
+        grid-template-columns: repeat(auto-fit, minmax(160px, 160px));
+        grid-gap: 15px;
+    }
+    .brigade__block p {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .page__title h3 {
+        font-size: 20px;
+        line-height: 30px;
+    }
+    .page__text p {
+        font-size: 15px;
+        line-height: 22px;
+    }
+}
+
+@media(max-width: 600px){
+    .page__text p {
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .page__title h3 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .page__brigade {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 140px));
+        grid-gap: 15px;
+    }
+    .brigade__block img {
+        margin-bottom: 5px;
+    }
+    .brigade__block p:last-child {
+        margin-bottom: 5px;
+    }
+}
+
+@media(max-width: 375px){
+    .page__brigade {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 120px));
+        grid-gap: 15px;
+    }
+}

@@ -21,28 +21,49 @@
                     <h3>Заявка успішно відправлена!</h3>
                 </div>
                 <div class="navigation _anim-items _anim-no-hide">
-                    <a href="#"><img src="./img/logo-header.png" alt="Логотип"></a>
-                    <nav>
-                        <ul class="menu">
-                            <li>
-                                <span>Пн</span>
-                                -
-                                <span>Пт</span>
-                                09:00-18:00
-                            </li>
-                            <li><a class="menu__link" href="./index.html">ГОЛОВНА</a></li>
-                            <li><a class="menu__link" href="./html/poslugi.html">ПОСЛУГИ</a></li>
-                            <li><a class="menu__link" href="./html/portfolio.html">ПОРТФОЛІО</a></li>
-                            <li><a class="menu__link" href="./html/price.html">ЦІНИ</a></li>
-                            <li><a class="menu__link" href="">ПРО НАС</a></li>
-                            <li><button class="menu__link" onclick="up()">КОНТАКТИ</button></li>
-                        </ul>
+                    <a class="navigation__logo" href="#"><img src="./img/logo-header.png" alt="Логотип"></a>
+                    <li class="navigation__time">
+                        <span>Пн</span>
+                        -
+                        <span>Пт</span>
+                        09:00-18:00
+                    </li>
+                    <nav class="navigation__menu">
+                        <div class="menu__icon">
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <div class="menu__body">
+                            <ul class="menu__list">
+                                <li>
+                                    <span>Пн</span>
+                                    -
+                                    <span>Пт</span>
+                                    09:00-18:00
+                                </li>
+                                <li><a class="menu__link" href="./index.html">ГОЛОВНА</a></li>
+                                <li><a class="menu__link" href="./html/poslugi.html">ПОСЛУГИ</a></li>
+                                <li><a class="menu__link" href="./html/portfolio.html">ПОРТФОЛІО</a></li>
+                                <li><a class="menu__link" href="./html/price.html">ЦІНИ</a></li>
+                                <li><a class="menu__link" href="./html/about.html">ПРО НАС</a></li>
+                                <li class="menu__contacts">
+                                    <button class="menu__link" onclick="up()">КОНТАКТИ</button>
+                                    <span class="menu-arrow"></span>
+                                    <ul class="menu__sub-list">
+                                        <li class="menu__sub-link">+38 (096) 88 25 577</li>
+                                        <li class="menu__sub-link">+38 (067) 88 25 577</li>
+                                        <li class="menu__sub-link">p.Mykola5577@gmail.com</li>
+                                        <li class="menu__sub-link">м.Львів</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     </nav>
                 </div>
                 <div class="main__content">
                     <div class="content__sidebar _anim-items _anim-no-hide">
                         <div class="sidebar__title">
-                            <h1><b>КОМПЛЕКСНИЙ <span>РЕМОНТ</span></b> У МІСТІ <span>ЛЬВІВ</span></h1>
+                            <h1><b>КОМПЛЕКСНИЙ <span>РЕМОНТ</span></b> <br class="br"> У МІСТІ <span>ЛЬВІВ</span></h1>
                         </div>
                         <div class="sidebar__form">
                             <form class="form__profile valid" action="" method="post">
@@ -60,7 +81,6 @@
                     </div>
                     <div class="content__social _anim-items _anim-no-hide">
                         <a href=""><img src="./img/inst-header.png" alt="Instagram"></a>
-                        <a href=""><img src="./img/facebook-header.png" alt="Facebook"></a>
                         <a href=""><img src="./img/telega-header.png" alt="Telegram"></a>
                     </div>
                 </div>
@@ -119,13 +139,14 @@
                         <p class="block__text">Надаємо гарантію на роботи, які вказуємо в договорі</p>
                     </div>
                 </div>
-                <div class="info__scroll">
+                <div class="info__scroll more">
                     <h5 class="scroll__title _anim-items _anim-no-hide">У чому переваги ремонту квартир <span>під
                             ключ</span>?</h5>
                     <p class="scroll__sub-title _anim-items _anim-no-hide">Вирішивши зробити ремонт квартири під ключ,
                         замовник отримує відразу
                         кілька
                         переваг. До основних відносять:</p>
+                    <button class="scroll__more more-btn">ДЕТАЛЬНІШЕ</button>
                     <ul class="scroll__list">
                         <li class="list__string _anim-items _anim-no-hide">Підряд виконує одна будівельна компанія, яка
                             бере на себе всі
@@ -143,6 +164,7 @@
                             власників житла, які бажають
                             отримати якісний результат з мінімальною участю.</li>
                     </ul>
+
                 </div>
             </div>
         </div>
@@ -491,7 +513,13 @@
         <div class="container">
             <div class="footer">
                 <div class="footer__box">
-                    <img src="./img/logo-footer.png" alt="" class="box__logo">
+                    <div class="box__title-img">
+                        <div class="sidebar__title footer-sidebar__title">
+                            <h1><b>КОМПЛЕКСНИЙ <span>РЕМОНТ</span></b> <br> У МІСТІ <span>ЛЬВІВ</span></h1>
+                        </div>
+                        <img src="./img/logo-footer.png" alt="" class="box__logo">
+                    </div>
+                    
                     <div class="box__menu">
                         <ul>
 
@@ -499,15 +527,14 @@
                             <li class="menu__links"><a href="./html/poslugi.html">ПОСЛУГИ</a></li>
                             <li class="menu__links"><a href="./html/portfolio.html">ПОРТФОЛІО</a></li>
                             <li class="menu__links"><a href="./html/price.html">ЦІНИ</a></li>
-                            <li class="menu__links"><a href="">ПРО НАС</a></li>
-                            <li class="menu__links"><a href="">ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</a></li>
+                            <li class="menu__links"><a href="./html/about.html">ПРО НАС</a></li>
+                            <li class="menu__links"><a href="./html/private.html">ПОЛІТИКА КОНФІДЕНЦІЙНОСТІ</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="footer__box">
                     <div class="box__social">
                         <a href="" class="social__link"><img src="./img/inst-header.png" alt=""></a>
-                        <a href="" class="social__link"><img src="./img/facebook-header.png" alt=""></a>
                         <a href="" class="social__link"><img src="./img/telega-header.png" alt=""></a>
                     </div>
                     <div class="box__contacts">
@@ -537,11 +564,13 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="./libs/inputmask.min.js"></script>
     <script src="./libs/just-validate.min.js"></script>
-    <script src="./js/script.js"></script>
     <script src="./js/animated.js"></script>
-
+    <script src="./js/script.js"></script>
+    <script src="./js/burger.js"></script>
+    <script src="./js/spoiler.js"></script>
 </body>
 
 </html>
